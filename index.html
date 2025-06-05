@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"> <!-- Исправлено charter -> charset -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'> 
+  <title>Поздравления</title>
+  <style>
+    body {
+      background: linear-gradient(#CCFFFF, #CCCCFF) fixed;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #CC66FF;
+    }
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .container {
+      margin-top: 20px;
+    }
+ button {
+      background-color: #CC33FF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1em; 
+      margin-top: 20px;
+    }
+    button:hover { 
+      background-color: #CC99FF; 
+    }
+  </style>
+</head>
+<body>
+  <h1>Поздравляю</h1>
+  <div class='container'>
+    <p id='result'>Нажми на кнопку чтобы получить поздравление</p>
+    <img id='birthdayImage' src="" alt="Картинка" style="display:none;">
+    <button onclick='generateCongratulation()'>Сгенерировать</button>
+  </div>
+  <script>
+    const messages = [
+      'Поздравляю тебя с Днем Рождения! Надеюсь, твоя жизнь будет наполнена радостью и удачей!',
+      'Желаю тебе светлых мыслей, радости и море счастья! С Днем Рождения!',
+      'С Днем Рождения! Пусть твоя жизнь будет насыщена любовью и достижениями!',
+      'Желаю тебе больших успехов, здоровья и всего наилучшего в жизни! С Днём Рождения!',
+      'С самыми искренними пожеланиями в День Рождения! Пусть все дни будут прекрасны, а удача будет преследовать тебя каждый день!',
+      'Пусть все твои мечты сбудутся! Поздравляю тебя с праздником!',
+      'С Днем Рождения! Желаю тебе много радости, счастья и здоровья!',
+      'С Днем Рождения! Надеюсь, что этот день будет прекрасен и незабываем!',
+      'Желаю тебе счастья и любви на протяжении всей жизни! С Днем Рождения!',
+      'Надеюсь, в этот день тебе достанется безграничное счастье! С Днем Рождения!',
+      'Поздравляю тебя с Днем Рождения! Искренне надеюсь, что это будет замечательный день!',
+      'Пусть твои друзья и близкие люди принесут тебе только приятные эмоции в этот день! С Днем Рождения!',
+      'Все самое лучшее и прекрасное для тебя в этот день! С Днем Рождения!',
+      'Поздравляю тебя с Днем Рождения! Надеюсь, что ты будешь веселиться и улыбаться каждый новый день!',
+      'С Днем Рождения! Желаю тебе прекрасного дня и море незабываемых моментов!'
+    ];
+    
+    const images = [ // Исправлено iages -> images
+      'https://avatars.mds.yandex.net/i?id=031a4a43fa7bb0c16685d57d5534ce492bc9feda-12928931-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=409b54fbdfff2f5e9ddd27c5d874f3d815f2ce56-3989655-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=c54b8b7c5eda1dadd0387fc3de4d9edee885bbff-5451357-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=616cf328f062ccaa1971d8e4a0f5370e147be94d-4055782-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=d9c54ecb58407baa3386859552dc388d84c42501-4079813-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=0a1da5ecb187c20e31161d685559974898a23862-10599899-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=b294c48baad1655fdef46be29d1af04bb8ddfe01-4120554-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=f4d0bff71bda96532ffe4b9f1f011cffdc354b09-10114558-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=cb0c1e41fcc1a1569e2b5f350277e1ba392f0568-11515342-images-thumbs&n=13',
+      'https://avatars.mds.yandex.net/i?id=f692cc98c786efbf168434b7cf07e4de18186899-5843509-images-thumbs&n=13'
+    ];
+
+    function generateCongratulation() {
+      const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+      const randomImage = images[Math.floor(Math.random() * images.length)];
+
+      document.getElementById('result').textContent = randomMessage;
+      const imgElement = document.getElementById('birthdayImage');
+      imgElement.src = randomImage;
+      imgElement.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
